@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>نمایندگی خدمات پس از فروش ذاکر آقا ملکی – بابل</title>
-  <meta name="description" content="نصب، تعمیر، گارانتی، تأمین قطعه و پشتیبانی تخصصی محصولات صوتی‌وتصویری و ماکروویو در بابل. رزرو نوبت آنلاین، گفت‌وگوی واتساپ، راهنما و سوالات پرتکرار." />
+  <meta name="description" content="نصب، تعمیر، گارانتی، تأمین قطعه و پشتیبانی تخصصی محصولات صوتی‌وتصویری و ماکروویو در بابل. رزرو نوبت آنلاین، گفت‌وگوی واتساپ/تلگرام، سوالات پرتکرار." />
   <meta name="theme-color" content="#0ea5e9" />
   <meta property="og:title" content="نمایندگی خدمات پس از فروش ذاکر آقا ملکی – بابل" />
   <meta property="og:description" content="نصب، تعمیر، گارانتی، تأمین قطعه – رزرو نوبت آنلاین و گفت‌وگوی مستقیم در واتساپ/تلگرام." />
@@ -14,6 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800&display=swap" rel="stylesheet">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🔧</text></svg>">
+
   <style>
     :root{
       --bg1:#0f172a; --bg2:#1e293b; --acc:#0ea5e9; --acc-2:#38bdf8; --txt:#e5f1ff; --muted:#94a3b8; --card:rgba(255,255,255,.06);
@@ -61,16 +62,23 @@
     .chip{background:rgba(148,163,184,.12);border:1px solid rgba(148,163,184,.25);padding:8px 12px;border-radius:999px;white-space:nowrap}
     @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-    /* جدول زمان‌بندی (رزرو) */
-    .slots{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-    @media(min-width:640px){.slots{grid-template-columns:repeat(4,1fr)}}
-    .slot{padding:10px;border:1px solid rgba(255,255,255,.12);border-radius:10px;text-align:center;cursor:pointer}
-    .slot.is-picked{outline:2px solid var(--acc)}
-
-    /* فرم‌ها */
-    .form{display:grid;gap:10px}
-    .input{background:#0b1323;border:1px solid rgba(255,255,255,.12);color:#e6f7ff;border-radius:12px;padding:10px}
-    .input:focus{outline:2px solid var(--acc)}
+    /* اسلایدر محیط کارگاه */
+    .workshop-slider{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.12);
+      border-radius:16px;background:rgba(255,255,255,.04)}
+    .ws-slides{display:flex;transition:transform .55s ease}
+    .ws-slide{min-width:100%;user-select:none}
+    .ws-slide img{width:100%;height:clamp(220px,40vw,520px);object-fit:cover;display:block}
+    .ws-slide figcaption{text-align:center;padding:.6rem;color:#cbd5e1;font-size:.95rem}
+    .ws-ctrl{position:absolute;top:50%;transform:translateY(-50%);border:0;cursor:pointer;
+      width:42px;height:42px;border-radius:10px;background:rgba(15,23,42,.6);
+      color:#e6f7ff;font-size:22px;display:grid;place-items:center}
+    .ws-prev{right:12px}
+    .ws-next{left:12px}
+    .ws-ctrl:hover{background:rgba(56,189,248,.2)}
+    .ws-dots{display:flex;gap:8px;justify-content:center;padding:.8rem}
+    .ws-dots button{width:10px;height:10px;border-radius:999px;border:0;background:#64748b;opacity:.6;cursor:pointer}
+    .ws-dots button[aria-current="true"]{opacity:1;background:#38bdf8}
+    .workshop-slider, .ws-slide img{touch-action:pan-y}
 
     /* فوتر */
     footer{border-top:1px solid rgba(255,255,255,.08);background:rgba(2,6,23,.6);padding:24px 0;margin-top:24px;color:#cbd5e1}
@@ -89,7 +97,7 @@
     "@type":"LocalBusiness",
     "name":"نمایندگی خدمات پس از فروش ذاکر آقا ملکی – بابل",
     "image":"https://via.placeholder.com/600x400?text=Service+Center",
-    "url":"https://example.com",
+    "url":"https://zakersvc.github.io",
     "telephone":"+981132326686",
     "address":{
       "@type":"PostalAddress",
@@ -125,6 +133,7 @@
           <li><a href="#brands">برندها</a></li>
           <li><a href="#booking">رزرو نوبت</a></li>
           <li><a href="#faq">سوالات</a></li>
+          <li><a href="#workshop">محیط کارگاه</a></li>
           <li><a href="#branches">شعبات</a></li>
           <li><a href="#contact">تماس</a></li>
         </ul>
@@ -233,11 +242,6 @@
         <span class="chip" role="listitem">لومکس</span>
         <span class="chip" role="listitem">JBL</span>
         <span class="chip" role="listitem">Beats</span>
-        <!-- تکرار برای حرکت پیوسته -->
-        <span class="chip" role="listitem">سامسونگ</span>
-        <span class="chip" role="listitem">ال‌جی</span>
-        <span class="chip" role="listitem">سونی</span>
-        <span class="chip" role="listitem">جی‌پلاس</span>
       </div>
     </div>
   </section>
@@ -299,6 +303,36 @@
       <summary>چگونه می‌توانم وقت نصب یا تعمیر بگیرم؟</summary>
       <p class="muted">✅ لطفاً شماره تماس خود را بدهید تا همکاران ما با شما هماهنگی کنند و یا با شماره تماس دفتر در ساعت کاری تماس حاصل فرمایید.</p>
     </details>
+  </section>
+
+  <!-- محیط کارگاه: اسلایدر -->
+  <section id="workshop" class="section container">
+    <h2>🏭 محیط کارگاه</h2>
+    <p class="sub">چند نما از محیط کاری و تجهیزات ما</p>
+
+    <div class="workshop-slider" dir="ltr" aria-label="اسلایدر محیط کارگاه">
+      <div class="ws-slides">
+        <figure class="ws-slide">
+          <img src="images/workshop-1.jpg" loading="lazy" alt="فضای اصلی تعمیرگاه و میزهای کار">
+          <figcaption>فضای اصلی تعمیرگاه و میزهای کار</figcaption>
+        </figure>
+        <figure class="ws-slide">
+          <img src="images/workshop-2.jpg" loading="lazy" alt="بخش پذیرش و انتظار مشتریان">
+          <figcaption>بخش پذیرش و انتظار مشتریان</figcaption>
+        </figure>
+        <figure class="ws-slide">
+          <img src="images/workshop-3.jpg" loading="lazy" alt="دیوار افتخارات و گواهینامه‌ها">
+          <figcaption>دیوار افتخارات و گواهینامه‌ها</figcaption>
+        </figure>
+        <figure class="ws-slide">
+          <img src="images/workshop-4.jpg" loading="lazy" alt="نمای ورودی و پیشخوان خدمات">
+          <figcaption>نمای ورودی و پیشخوان خدمات</figcaption>
+        </figure>
+      </div>
+      <button class="ws-ctrl ws-prev" aria-label="قبلی">‹</button>
+      <button class="ws-ctrl ws-next" aria-label="بعدی">›</button>
+      <div class="ws-dots" role="tablist" aria-label="انتخاب اسلاید"></div>
+    </div>
   </section>
 
   <section id="branches" class="section container">
@@ -400,7 +434,7 @@
       el.textContent = open ? 'هم‌اکنون باز هستیم (۸:۳۰–۱۳ و ۱۶–۲۱، به‌جز جمعه‌ها و تعطیلات رسمی)' : 'خارج از ساعات کاری: ۸:۳۰–۱۳ و ۱۶–۲۱ (به‌جز جمعه‌ها و تعطیلات رسمی)';
     })();
 
-    // تولید اسلات‌های زمانی
+    // تولید اسلات‌های زمانی رزرو
     const slotGrid=document.getElementById('slot-grid');
     const slotInput=document.getElementById('slot-input');
     const slots=['9-11','11-13','16-18','18-21'];
@@ -432,6 +466,56 @@
       window.open(`https://wa.me/989112002106?text=${txt}`,'_blank');
       document.getElementById('contact-msg').textContent='پیام شما به واتساپ آماده ارسال شد. ممنون از همراهی شما!'; e.target.reset();
     });
+
+    // اسکریپت اسلایدر محیط کارگاه
+    (function(){
+      const slider = document.querySelector('#workshop .workshop-slider');
+      const track  = slider.querySelector('.ws-slides');
+      const slides = Array.from(slider.querySelectorAll('.ws-slide'));
+      const prevBtn= slider.querySelector('.ws-prev');
+      const nextBtn= slider.querySelector('.ws-next');
+      const dotsEl = slider.querySelector('.ws-dots');
+
+      let i = 0, N = slides.length, timer, autoMs = 4000, isHover=false;
+
+      slides.forEach((_, idx)=>{
+        const b=document.createElement('button');
+        b.type='button';
+        b.setAttribute('aria-label','اسلاید '+(idx+1));
+        b.addEventListener('click',()=>go(idx));
+        dotsEl.appendChild(b);
+      });
+
+      function update(){
+        track.style.transform = `translateX(${-i*100}%)`;
+        [...dotsEl.children].forEach((d,idx)=>d.setAttribute('aria-current', idx===i ? 'true':'false'));
+      }
+      function go(to){ i=(to+N)%N; update(); }
+      function next(){ go(i+1); }
+      function prev(){ go(i-1); }
+      prevBtn.addEventListener('click', prev);
+      nextBtn.addEventListener('click', next);
+
+      // خودکار + توقف روی هاور/فوکوس
+      function start(){ timer = setInterval(()=>{ if(!isHover) next(); }, autoMs); }
+      function stop(){ clearInterval(timer); }
+      slider.addEventListener('mouseenter', ()=>{isHover=true});
+      slider.addEventListener('mouseleave', ()=>{isHover=false});
+      slider.addEventListener('focusin',  ()=>{isHover=true});
+      slider.addEventListener('focusout', ()=>{isHover=false});
+
+      // سوایپ لمسی
+      let x0=null;
+      slider.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;}, {passive:true});
+      slider.addEventListener('touchmove',e=>{
+        if(x0===null) return;
+        let dx=e.touches[0].clientX-x0;
+        if(Math.abs(dx)>60){ dx>0?prev():next(); x0=null; }
+      }, {passive:true});
+      slider.addEventListener('touchend',()=>{x0=null});
+
+      update(); start();
+    })();
 
     // PWA نصب
     let deferredPrompt; const installBtn=document.getElementById('install-btn');
