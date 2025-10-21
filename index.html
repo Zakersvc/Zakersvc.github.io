@@ -3,123 +3,447 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="نمایندگی رسمی خدمات پس از فروش محصولات صوتی و تصویری و ماکروویو ذاکر آقا ملکی در شهرستان بابل. نصب، تعمیر، آموزش و ارائه قطعات یدکی اصلی با تیمی متخصص و حرفه‌ای.">
-  <title>نمایندگی خدمات پس از فروش ذاکر آقا ملکی - بابل</title>
+  <title>نمایندگی خدمات پس از فروش ذاکر آقا ملکی – بابل</title>
+  <meta name="description" content="نصب، تعمیر، گارانتی، تأمین قطعه و پشتیبانی تخصصی محصولات صوتی‌وتصویری و ماکروویو در بابل. رزرو نوبت آنلاین، گفت‌وگوی واتساپ، راهنما و سوالات پرتکرار." />
+  <meta name="theme-color" content="#0ea5e9" />
+  <meta property="og:title" content="نمایندگی خدمات پس از فروش ذاکر آقا ملکی – بابل" />
+  <meta property="og:description" content="نصب، تعمیر، گارانتی، تأمین قطعه – رزرو نوبت آنلاین و گفت‌وگوی مستقیم در واتساپ/تلگرام." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fa_IR" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🔧</text></svg>">
   <style>
-    /* پایه */
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:"Vazirmatn",Tahoma,sans-serif; /* فونت fallback اضافه شد */
-      line-height:1.9;
-      background:linear-gradient(135deg,#0f172a,#1e293b,#0ea5e9);
-      background-size:300% 300%; animation:gradient 15s ease infinite;
-      color:#f1f5f9;
-      font-size:1.1rem; /* سایز فونت کمی بیشتر شد */
+    :root{
+      --bg1:#0f172a; --bg2:#1e293b; --acc:#0ea5e9; --acc-2:#38bdf8; --txt:#e5f1ff; --muted:#94a3b8; --card:rgba(255,255,255,.06);
     }
-    @keyframes gradient {
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
-    }
-    @media (max-width:600px){
-      body{font-size:1.2rem;}
-      section{padding:1rem .5rem;}
-      header h1{font-size:1.1rem;}
-    }
-    header{
-      backdrop-filter:blur(10px) saturate(180%);
-      background:rgba(15,23,42,.7);
-      padding:1.2rem; text-align:center;
-      position:sticky;top:0;z-index:10;
-      box-shadow:0 2px 10px rgba(0,0,0,.3);
-    }
-    header h1{margin:0;font-size:1.5rem;font-weight:800;color:#38bdf8}
-    section{padding:2rem 1rem;max-width:950px;margin:auto}
-    h2{
-      color:#38bdf8; margin-bottom:1rem; font-size:1.3rem;
-      border-bottom:2px solid #38bdf8; display:inline-block; padding-bottom:.4rem;
-    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0; font-family:"Vazirmatn",Tahoma,sans-serif; color:var(--txt);
+      background:linear-gradient(135deg,var(--bg1),var(--bg2)); background-attachment:fixed;}
+    a{color:inherit}
+    .container{max-width:1100px;margin:auto;padding:0 16px}
+    header.topbar{position:sticky;top:0;z-index:1000;background:rgba(2,6,23,.65);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;gap:10px;align-items:center;font-weight:800}
+    .brand .logo{display:grid;place-items:center;width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--acc),var(--acc-2));box-shadow:0 6px 20px rgba(56,189,248,.35)}
+    nav ul{display:flex;gap:10px;flex-wrap:wrap}
+    nav a{display:inline-block;padding:8px 12px;border-radius:10px;color:#cfe8ff;text-decoration:none}
+    nav a:hover, nav a.active{background:rgba(56,189,248,.15);color:#fff}
 
-    .card{
-      background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2);
-      border-radius:18px; padding:1.5rem; margin:1rem 0;
-      box-shadow:0 4px 25px rgba(0,0,0,.2);
-      transition:transform .3s, box-shadow .3s;
-    }
-    .card:hover{
-      transform:translateY(-6px);
-      box-shadow:0 8px 30px rgba(0,0,0,.35);
-    }
+    .hero{position:relative;overflow:hidden}
+    .hero .container{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;padding:56px 16px}
+    .hero h1{font-size:clamp(24px,4vw,40px);line-height:1.4;margin:0 0 8px;color:#fff}
+    .hero p{color:var(--muted);margin:0 0 16px}
+    .tag{display:inline-flex;gap:8px;align-items:center;background:rgba(56,189,248,.15);color:#d9f2ff;border:1px solid rgba(56,189,248,.35);padding:6px 10px;border-radius:999px;font-size:.9rem;margin-bottom:12px}
+    .cta{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{background:linear-gradient(135deg,var(--acc),var(--acc-2));color:#06273b;border:0;padding:10px 14px;border-radius:12px;font-weight:800;text-decoration:none}
+    .btn.secondary{background:transparent;border:1px solid rgba(148,163,184,.5);color:#e2f1ff}
+    .hero .device{aspect-ratio:4/3;background:radial-gradient(80% 60% at 50% 40%, rgba(56,189,248,.25), transparent), linear-gradient(160deg,#0b1220,#0f172a);border:1px solid rgba(255,255,255,.08);border-radius:18px;box-shadow:0 30px 100px rgba(8,47,73,.4)}
+    .hero .device-inner{padding:18px}
 
-    ul{list-style:"🔹 ";padding-right:1.3rem}
-    .contact p{margin:.4rem 0}
+    .section{padding:48px 0}
+    .section h2{font-size:clamp(20px,3vw,28px);margin:0 0 20px;color:#e6f7ff}
+    .sub{color:var(--muted);margin-top:-10px;margin-bottom:24px}
+    .grid{display:grid;gap:16px}
+    @media(min-width:760px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}.grid.cols-2{grid-template-columns:repeat(2,1fr)}}
 
-    a.btn{
-      display:inline-block;background:#38bdf8;color:#0f172a;
-      padding:.7rem 1.3rem;border-radius:10px;
-      text-decoration:none;font-weight:600;transition:.3s;
-      margin-top:.6rem;
-    }
-    a.btn:hover{background:#0ea5e9;color:#fff;box-shadow:0 0 15px rgba(56,189,248,.8)}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px;box-shadow:0 6px 30px rgba(0,0,0,.2)}
+    .card:hover{box-shadow:0 10px 35px rgba(0,0,0,.3);transform:translateY(-2px)}
+    .card h3{margin:0 0 8px}
+    .muted{color:var(--muted)}
+    .list{list-style:"🔹 ";padding-right:1.2rem}
 
-    footer{
-      text-align:center;padding:1rem;margin-top:2rem;
-      background:rgba(15,23,42,.8);color:#cbd5e1;font-size:.9rem;
-      border-top:1px solid rgba(255,255,255,.1);
-    }
+    /* مارکی برندها */
+    .marquee{overflow:hidden;mask-image:linear-gradient(to left,transparent,black 8%,black 92%,transparent)}
+    .marquee-track{display:flex;gap:28px;animation:scroll 18s linear infinite;padding:6px 0}
+    .chip{background:rgba(148,163,184,.12);border:1px solid rgba(148,163,184,.25);padding:8px 12px;border-radius:999px;white-space:nowrap}
+    @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+    /* جدول زمان‌بندی (رزرو) */
+    .slots{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+    @media(min-width:640px){.slots{grid-template-columns:repeat(4,1fr)}}
+    .slot{padding:10px;border:1px solid rgba(255,255,255,.12);border-radius:10px;text-align:center;cursor:pointer}
+    .slot.is-picked{outline:2px solid var(--acc)}
+
+    /* فرم‌ها */
+    .form{display:grid;gap:10px}
+    .input{background:#0b1323;border:1px solid rgba(255,255,255,.12);color:#e6f7ff;border-radius:12px;padding:10px}
+    .input:focus{outline:2px solid var(--acc)}
+
+    /* فوتر */
+    footer{border-top:1px solid rgba(255,255,255,.08);background:rgba(2,6,23,.6);padding:24px 0;margin-top:24px;color:#cbd5e1}
+
+    /* دکمه‌های شناور */
+    .fab{position:fixed;left:18px;bottom:18px;z-index:1000;display:inline-grid;place-items:center;width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#22c55e,#16a34a);box-shadow:0 12px 30px rgba(16,185,129,.4)}
+    .fab-telegram{left:18px;bottom:84px;background:linear-gradient(135deg,#2aabee,#229ed9)}
+
+    /* دسترسی‌پذیری */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"نمایندگی خدمات پس از فروش ذاکر آقا ملکی – بابل",
+    "image":"https://via.placeholder.com/600x400?text=Service+Center",
+    "url":"https://example.com",
+    "telephone":"+981132326686",
+    "address":{
+      "@type":"PostalAddress",
+      "addressLocality":"بابل",
+      "streetAddress":"کمربندی غربی، جنب توحید ۳۲",
+      "addressCountry":"IR"
+    },
+    "openingHoursSpecification": [
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday","Monday","Tuesday","Wednesday","Thursday"],"opens":"08:30","closes":"13:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday","Monday","Tuesday","Wednesday","Thursday"],"opens":"16:00","closes":"21:00"}
+    ],
+    "priceRange":"$$",
+    "sameAs":["https://wa.me/989112002106","https://t.me/Zakersvcbot"]
+  }
+  </script>
 </head>
 <body>
+  <!-- واتساپ و تلگرام شناور -->
+  <a class="fab" href="https://wa.me/989112002106" aria-label="گفت‌وگو در واتساپ">💬</a>
+  <a class="fab fab-telegram" href="https://t.me/Zakersvcbot" aria-label="ربات تلگرام">@</a>
 
-<header>
-  <h1>نمایندگی رسمی خدمات پس از فروش ذاکر آقا ملکی - بابل</h1>
-</header>
+  <header class="topbar" aria-label="نوار بالای سایت">
+    <div class="container nav">
+      <div class="brand" aria-label="برند">
+        <span class="logo" aria-hidden="true">🔧</span>
+        <span>نمایندگی ذاکر آقا ملکی – بابل</span>
+      </div>
+      <nav aria-label="منوی اصلی">
+        <ul>
+          <li><a href="#hero" class="active">خانه</a></li>
+          <li><a href="#about">درباره ما</a></li>
+          <li><a href="#services">خدمات</a></li>
+          <li><a href="#brands">برندها</a></li>
+          <li><a href="#booking">رزرو نوبت</a></li>
+          <li><a href="#faq">سوالات</a></li>
+          <li><a href="#branches">شعبات</a></li>
+          <li><a href="#contact">تماس</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<section id="about" class="card">
-  <h2>📢 معرفی نمایندگی</h2>
-  <p>👋 نمایندگی رسمی خدمات پس از فروش محصولات صوتی و تصویری و ماکروویو ذاکر آقا ملکی در شهرستان بابل</p>
-  <p>🛠️ نصب، تعمیر، آموزش و ارائه قطعات یدکی اصلی با تیمی متخصص و حرفه‌ای</p>
-  <p>✅ خدمات در محل مشتری، همراه با گارانتی و ضمانت رسمی</p>
-</section>
+  <section id="hero" class="hero" aria-label="بخش معرفی">
+    <div class="container">
+      <div>
+        <span class="tag">نمایندگی رسمی • خدمات در محل • گارانتی تعمیر</span>
+        <h1>نصب، تعمیر و پشتیبانی تخصصی محصولات صوتی‌وتصویری و ماکروویو</h1>
+        <p>توسط تیم حرفه‌ای با قطعات اصلی، پوشش سراسر بابل و حومه. پشتیبانی تلفنی و پیام‌رسان، و <strong>رزرو آنلاین</strong> در چند ثانیه.</p>
+        <div class="cta">
+          <a class="btn" href="#booking">رزرو سریع نوبت</a>
+          <a class="btn secondary" href="tel:01132326686">تماس مستقیم 011-32326686</a>
+        </div>
+        <p class="muted" aria-live="polite" id="open-status"></p>
+      </div>
+      <div class="device" aria-hidden="true">
+        <div class="device-inner">
+          <img src="https://via.placeholder.com/800x500?text=TV+%26+Microwave+Service" alt="" style="width:100%;height:auto;border-radius:12px" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section id="products" class="card">
-  <h2>🖥️ لیست محصولات و برندها</h2>
-  <ul>
-    <li>تلویزیون‌ها، سیستم‌های صوتی، ماکروویو و لوازم جانبی</li>
-    <li>برندها: سامسونگ، ال‌جی، سونی، جی‌پلاس، ایکس‌ویژن، پاناسونیک، TCL، اسنوا، دوو، ناسیونال، شهاب، پارس، مجیک، نکسار، جی‌وی‌سی، امپریال، لومکس، بیتس، JBL و بسیاری دیگر.</li>
-  </ul>
-</section>
+  <section id="about" class="section container">
+    <h2>📢 درباره ما</h2>
+    <p class="sub">رزومه و توانمندی‌های مرکز خدمات پس از فروش در استان مازندران</p>
+    <div class="grid cols-2">
+      <div class="card">
+        <h3>رزومه کوتاه</h3>
+        <ul class="list">
+          <li>۲۵ پرسنل تحصیل‌کرده و مجرب در نصب، آموزش و تعمیرات</li>
+          <li>۴ شعبه فعال در سطح استان مازندران</li>
+          <li>ارائه خدمات حتی در روزهای تعطیل (با هماهنگی)</li>
+          <li>تعمیرات تخصصی نمایشگرهای صنعتی، تلویزیون، ماکروویو، سیستم‌های صوتی و محصولات IT</li>
+          <li>پوشش همکاری با بیش از ۹۹٪ نمایندگی‌های موجود در کشور</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>امکانات و تفاوت‌ها</h3>
+        <ul class="list">
+          <li>فضای کارگاهی و خدماتی بیش از ۲۰۰ متر</li>
+          <li>پیشرفته‌ترین تجهیزات و دستگاه‌های تست و تعمیر در استان</li>
+          <li>نرم‌افزار خدماتی برای ارتباط مرکز، تکنسین‌ها و مشتریان</li>
+          <li>نماینده نصب و راه‌اندازی نمایشگرهای هوشمند تجاری، ویدئووال و صنعتی</li>
+          <li>همکاری مستمر با سازمان‌ها و ادارات دولتی</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-<section id="services" class="card">
-  <h2>🛡️ خدمات پس از فروش / گارانتی</h2>
-  <ul>
-    <li>نصب و تعمیر انواع تلویزیون و ماکروویو با ابزار حرفه‌ای</li>
-    <li>خدمات در منزل یا محل کار</li>
-    <li>ارائه قطعات یدکی اصلی</li>
-    <li>گارانتی رسمی و ضمانت تعمیرات</li>
-  </ul>
-</section>
+  <section id="services" class="section container">
+    <h2>🛠️ خدمات ما</h2>
+    <p class="sub">گارانتی رسمی، پیک و خدمات در منزل، آموزش کاربری و تأمین قطعات اصلی</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>تعمیر تخصصی تلویزیون</h3>
+        <ul class="list">
+          <li>عیب‌یابی برد تصویر، صدا و بک‌لایت</li>
+          <li>کالیبره رنگ و تست کیفیت</li>
+          <li>به‌روزرسانی نرم‌افزار</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>نصب و سرویس ماکروویو</h3>
+        <ul class="list">
+          <li>نصب توکار/رومیزی و تراز ایمن</li>
+          <li>تعویض مگنترون و ترانس</li>
+          <li>ارائه دفترچه راهنما</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>سیستم‌های صوتی و سینمای خانگی</h3>
+        <ul class="list">
+          <li>عیب‌یابی آمپلی‌فایر و ساب‌ووفر</li>
+          <li>سیم‌کشی تمیز و مخفی</li>
+          <li>بهینه‌سازی آکوستیک</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-<section id="contact" class="card contact">
-  <h2>☎ تماس و پشتیبانی</h2>
-  <p>📞 تماس مستقیم: 32326686 – 32339976 – 32361768</p>
-  <p>📱 موبایل: 09112002106</p>
-  <p>☎ VOIP: 44425221-4</p>
-  <p>💬 واتساپ و تلگرام: ارسال پیام</p>
-  <a href="https://wa.me/989112002106" class="btn">ارسال پیام در واتساپ</a>
-  <a href="https://t.me/yourtelegramid" class="btn">ارسال پیام در تلگرام</a>
-</section>
+  <section id="brands" class="section container">
+    <h2>🏷️ برندهای تحت پوشش</h2>
+    <div class="marquee" aria-label="لیست برندها">
+      <div class="marquee-track" role="list">
+        <span class="chip" role="listitem">سامسونگ</span>
+        <span class="chip" role="listitem">ال‌جی</span>
+        <span class="chip" role="listitem">سونی</span>
+        <span class="chip" role="listitem">جی‌پلاس</span>
+        <span class="chip" role="listitem">ایکس‌ویژن</span>
+        <span class="chip" role="listitem">پاناسونیک</span>
+        <span class="chip" role="listitem">TCL</span>
+        <span class="chip" role="listitem">اسنوا</span>
+        <span class="chip" role="listitem">دوو</span>
+        <span class="chip" role="listitem">ناسیونال</span>
+        <span class="chip" role="listitem">شهاب</span>
+        <span class="chip" role="listitem">پارس</span>
+        <span class="chip" role="listitem">مجیک</span>
+        <span class="chip" role="listitem">نکسار</span>
+        <span class="chip" role="listitem">جی‌وی‌سی</span>
+        <span class="chip" role="listitem">امپریال</span>
+        <span class="chip" role="listitem">لومکس</span>
+        <span class="chip" role="listitem">JBL</span>
+        <span class="chip" role="listitem">Beats</span>
+        <!-- تکرار برای حرکت پیوسته -->
+        <span class="chip" role="listitem">سامسونگ</span>
+        <span class="chip" role="listitem">ال‌جی</span>
+        <span class="chip" role="listitem">سونی</span>
+        <span class="chip" role="listitem">جی‌پلاس</span>
+      </div>
+    </div>
+  </section>
 
-<section id="address" class="card">
-  <h2>📍 آدرس</h2>
-  <p>بابل، کمربندی غربی، جنب توحید ۳۲</p>
-  <a href="https://maps.google.com/?q=بابل، کمربندی غربی، جنب توحید ۳۲" target="_blank" class="btn">🔗 نمایش روی نقشه گوگل</a>
-</section>
+  <section id="booking" class="section container">
+    <h2>📅 رزرو نوبت آنلاین</h2>
+    <p class="sub">تاریخ و بازه زمانی را انتخاب کنید؛ همکاران ما برای تأیید تماس می‌گیرند.</p>
 
-<footer>
-  © 2025 نمایندگی رسمی ذاکر آقا ملکی - بابل | طراحی شده با ❤️
-</footer>
+    <form id="booking-form" class="card form" aria-label="فرم رزرو">
+      <label>نام و نام خانوادگی
+        <input class="input" required name="name" autocomplete="name" placeholder="مثلاً علی رضایی">
+      </label>
+      <label>شماره تماس
+        <input class="input" required name="phone" inputmode="tel" placeholder="0912xxxxxxx">
+      </label>
+      <label>نوع دستگاه
+        <select class="input" name="device">
+          <option>تلویزیون</option>
+          <option>ماکروویو</option>
+          <option>سیستم صوتی</option>
+          <option>سایر</option>
+        </select>
+      </label>
+      <div class="grid cols-2">
+        <label>تاریخ
+          <input class="input" required type="date" name="date">
+        </label>
+        <label>بازه زمانی ترجیحی
+          <div class="slots" id="slot-grid" role="listbox" aria-label="بازه‌های زمانی"></div>
+          <input type="hidden" name="slot" id="slot-input" required>
+        </label>
+      </div>
+      <label>شرح مورد
+        <textarea class="input" rows="3" name="desc" placeholder="عیب دستگاه را شرح دهید..."></textarea>
+      </label>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn" type="submit">ثبت درخواست</button>
+        <a class="btn secondary" href="https://wa.me/989112002106" target="_blank" rel="noopener">سؤال در واتساپ</a>
+      </div>
+      <p id="booking-msg" class="muted" role="status" aria-live="polite"></p>
+    </form>
+  </section>
 
+  <section id="faq" class="section container">
+    <h2>❓ سوالات پرتکرار</h2>
+    <details>
+      <summary>آیا خدمات در منزل هم انجام می‌دهید؟</summary>
+      <p class="muted">✅ بله، در صورت نیاز تکنسین فنی به منزل مشتری اعزام می‌شود.</p>
+    </details>
+    <details>
+      <summary>آیا خدمات شما شامل گارانتی می‌شود؟</summary>
+      <p class="muted">✅ بله، تمامی خدمات نصب و تعمیر یا بصورت گارانتی رسمی و شرکتی یا بصورت ضمانت دفتر ارائه می‌شود.</p>
+    </details>
+    <details>
+      <summary>آیا مشاوره قبل از خدمات رایگان است؟</summary>
+      <p class="muted">✅ بله، قبل از انجام هر خدمات مشاوره رایگان ارائه می‌کنیم، تا شما بتوانید با توجه به نوع استفاده بهترین انتخاب را انجام دهید.</p>
+    </details>
+    <details>
+      <summary>چگونه می‌توانم وقت نصب یا تعمیر بگیرم؟</summary>
+      <p class="muted">✅ لطفاً شماره تماس خود را بدهید تا همکاران ما با شما هماهنگی کنند و یا با شماره تماس دفتر در ساعت کاری تماس حاصل فرمایید.</p>
+    </details>
+  </section>
+
+  <section id="branches" class="section container">
+    <h2>🏢 شعبات فعال</h2>
+    <p class="sub">برای مراجعه حضوری یا خدمات در محل، نزدیک‌ترین شعبه را انتخاب کنید.</p>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>بابل (مرکزی)</h3>
+        <p>کمربندی غربی، جنب توحید ۳۲ – نمایندگی صوتی و تصویری ذاکر آقا ملکی</p>
+        <ul class="list">
+          <li>📱 09112002106</li>
+          <li>📞 011-32326686 • 011-32339976 • 011-32361768</li>
+          <li>☎ VOIP: 011-44425221-4</li>
+        </ul>
+        <iframe title="نقشه بابل" style="width:100%;height:180px;border:0;border-radius:12px" loading="lazy" src="https://www.google.com/maps?q=بابل،%20کمربندی%20غربی،%20جنب%20توحید%203۲&output=embed"></iframe>
+      </div>
+      <div class="card">
+        <h3>بابلسر</h3>
+        <p>دور میدان امام حسین، جنب مؤسسه کشاورزی نهاوندی – نمایندگی رسمی قنبری و ذاکر آقا ملکی</p>
+        <ul class="list">
+          <li>📱 09112002107</li>
+          <li>📞 011-35363067 • 011-35363366</li>
+        </ul>
+        <iframe title="نقشه بابلسر" style="width:100%;height:180px;border:0;border-radius:12px" loading="lazy" src="https://www.google.com/maps?q=بابلسر%20میدان%20امام%20حسین%20جنب%20موسسه%20کشاورزی%20نهاوندی&output=embed"></iframe>
+      </div>
+      <div class="card">
+        <h3>ساری</h3>
+        <p>دور میدان امام خمینی، جنب پمپ بنزین، انتهای کوچه پاسدار – نمایندگی رسمی گلدیران قنبری</p>
+        <ul class="list">
+          <li>📱 09119992031</li>
+          <li>📞 011-33375222 • 011-33376222</li>
+        </ul>
+        <iframe title="نقشه ساری" style="width:100%;height:180px;border:0;border-radius:12px" loading="lazy" src="https://www.google.com/maps?q=ساری%20میدان%20امام%20خمینی%20جنب%20پمپ%20بنزین%20کوچه%20پاسدار&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section container">
+    <h2>☎ تماس و آدرس</h2>
+    <div class="grid cols-2">
+      <div class="card">
+        <p>📅 ساعات کاری: صبح‌ها ۸:۳۰ تا ۱۳ | عصرها ۱۶ تا ۲۱ (به‌جز جمعه‌ها و تعطیلات رسمی)</p>
+        <p>📞 011-32326686 • 011-32339976 • 011-32361768</p>
+        <p>📱 09112002106</p>
+        <p>☎ VOIP: 011-44425221-4</p>
+        <p>💬 واتساپ: <a class="btn" href="https://wa.me/989112002106" target="_blank" rel="noopener">ارسال پیام</a></p>
+        <p>🤖 ربات تلگرام: <a class="btn secondary" href="https://t.me/Zakersvcbot" target="_blank" rel="noopener">@Zakersvcbot</a></p>
+      </div>
+      <div class="card">
+        <p>📍 بابل، کمربندی غربی، جنب توحید ۳۲</p>
+        <iframe title="نقشه گوگل" style="width:100%;height:240px;border:0;border-radius:12px" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=بابل،%20کمربندی%20غربی،%20جنب%20توحید%20۳۲&output=embed"></iframe>
+      </div>
+    </div>
+
+    <form id="contact-form" class="card form" aria-label="فرم تماس">
+      <h3>فرم تماس سریع</h3>
+      <div class="grid cols-2">
+        <input class="input" name="name" placeholder="نام شما" required>
+        <input class="input" name="phone" placeholder="شماره تماس" inputmode="tel" required>
+      </div>
+      <input class="input" name="subject" placeholder="موضوع پیام" required>
+      <textarea class="input" name="message" rows="4" placeholder="متن پیام" required></textarea>
+      <button class="btn" type="submit">ارسال پیام</button>
+      <p id="contact-msg" class="muted" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
+      <small>© ۲۰۲۵ نمایندگی رسمی ذاکر آقا ملکی – بابل</small>
+      <small>ساخته شده با ❤️ | <a href="#" id="install-btn" style="text-decoration:underline">نصب نسخه آفلاین (PWA)</a></small>
+    </div>
+  </footer>
+
+  <script>
+    // اسکرول‌اسپای منو
+    const links=[...document.querySelectorAll('nav a')];
+    const sections=links.map(a=>document.querySelector(a.getAttribute('href')));
+    const spy=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          links.forEach(l=>l.classList.remove('active'));
+          const id='#'+e.target.id; const found=links.find(l=>l.getAttribute('href')===id); if(found) found.classList.add('active');
+        }
+      });
+    },{threshold:.5});
+    sections.forEach(s=>s&&spy.observe(s));
+
+    // وضعیت باز/بسته بودن (۸:۳۰–۱۳ و ۱۶–۲۱، به‌جز جمعه‌ها)
+    (function(){
+      const el=document.getElementById('open-status');
+      const now=new Date();
+      const d=now.getDay(); // 0=Sunday ... 5=Friday
+      const h=now.getHours()+ now.getMinutes()/60;
+      const isFriday = (d===5);
+      const inMorning = h>=8.5 && h<13;
+      const inEvening = h>=16 && h<21;
+      const open = !isFriday && (inMorning || inEvening);
+      el.textContent = open ? 'هم‌اکنون باز هستیم (۸:۳۰–۱۳ و ۱۶–۲۱، به‌جز جمعه‌ها و تعطیلات رسمی)' : 'خارج از ساعات کاری: ۸:۳۰–۱۳ و ۱۶–۲۱ (به‌جز جمعه‌ها و تعطیلات رسمی)';
+    })();
+
+    // تولید اسلات‌های زمانی
+    const slotGrid=document.getElementById('slot-grid');
+    const slotInput=document.getElementById('slot-input');
+    const slots=['9-11','11-13','16-18','18-21'];
+    slots.forEach(s=>{
+      const b=document.createElement('button'); b.type='button'; b.className='slot'; b.textContent=s; b.setAttribute('aria-pressed','false');
+      b.addEventListener('click',()=>{
+        document.querySelectorAll('.slot').forEach(x=>{x.classList.remove('is-picked'); x.setAttribute('aria-pressed','false')});
+        b.classList.add('is-picked'); b.setAttribute('aria-pressed','true'); slotInput.value=s;
+      });
+      slotGrid.appendChild(b);
+    });
+
+    // ارسال رزرو (واتساپ)
+    document.getElementById('booking-form').addEventListener('submit',e=>{
+      e.preventDefault();
+      const data=Object.fromEntries(new FormData(e.target).entries());
+      if(!data.slot){document.getElementById('booking-msg').textContent='بازه زمانی را انتخاب کنید.';return}
+      const text=encodeURIComponent(`رزرو نوبت\nنام: ${data.name}\nتلفن: ${data.phone}\nدستگاه: ${data.device}\nتاریخ: ${data.date}\nبازه: ${data.slot}\nشرح: ${data.desc||'-'}`);
+      const wa=`https://wa.me/989112002106?text=${text}`;
+      window.open(wa,'_blank');
+      document.getElementById('booking-msg').textContent='در واتساپ آماده ارسال است. اگر واتساپ ندارید، با شماره‌های ثابت تماس بگیرید.';
+      e.target.reset(); slotInput.value=''; document.querySelectorAll('.slot').forEach(x=>x.classList.remove('is-picked'));
+    });
+
+    // فرم تماس (واتساپ)
+    document.getElementById('contact-form').addEventListener('submit',e=>{
+      e.preventDefault(); const f=new FormData(e.target); const data=Object.fromEntries(f.entries());
+      const txt=encodeURIComponent(`پیام سایت\nنام: ${data.name}\nتلفن: ${data.phone}\nموضوع: ${data.subject}\nپیام: ${data.message}`);
+      window.open(`https://wa.me/989112002106?text=${txt}`,'_blank');
+      document.getElementById('contact-msg').textContent='پیام شما به واتساپ آماده ارسال شد. ممنون از همراهی شما!'; e.target.reset();
+    });
+
+    // PWA نصب
+    let deferredPrompt; const installBtn=document.getElementById('install-btn');
+    window.addEventListener('beforeinstallprompt',(e)=>{e.preventDefault(); deferredPrompt=e; installBtn.style.display='inline'});
+    installBtn.addEventListener('click',async()=>{ if(deferredPrompt){ deferredPrompt.prompt(); deferredPrompt=null; }});
+
+    // رجیستر سرویس‌ورکر
+    if('serviceWorker' in navigator){
+      window.addEventListener('load',()=>{
+        navigator.serviceWorker.register('sw.js').catch(console.warn);
+      });
+    }
+  </script>
 </body>
 </html>
